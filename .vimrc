@@ -39,6 +39,20 @@ set nowrap                     " do not wrap lines
 
 set pastetoggle=<F3>           " toggle paste mode with F3 (:set paste/nopaste)
 
+set timeoutlen=1000 ttimeoutlen=0               " minimize delay when switching from insert to normal mode"
+
+au BufNewFile,BufRead *.prawn set filetype=ruby " Add Ruby syntax highlithing to .prawn files"
+
+" Change cursor when in insert mode START
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+" optional reset cursor on start:
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
+" END
+
 " map HJKL for easier window movement
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
