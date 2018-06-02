@@ -138,14 +138,14 @@ Plugin 'mattn/emmet-vim'
 " autoclose matching stuff
 Plugin 'jiangmiao/auto-pairs'
 
-" use <Tab> for insert completion
-Plugin 'ervandew/supertab'
-
 " Syntax checker
 Plugin 'scrooloose/syntastic'
 
 " highlight yanked text
 Plugin 'machakann/vim-highlightedyank'
+
+" autocomplete
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
