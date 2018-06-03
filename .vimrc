@@ -111,6 +111,9 @@ Plugin 'tpope/vim-fugitive'
 " Surrounding with quotes, brackets etc.
 Plugin 'tpope/vim-surround'
 
+" Ruby support
+Plugin 'vim-ruby/vim-ruby'
+
 " Rails helpers
 Plugin 'tpope/vim-rails'
 
@@ -138,17 +141,25 @@ Plugin 'mattn/emmet-vim'
 " autoclose matching stuff
 Plugin 'jiangmiao/auto-pairs'
 
-" Syntax checker
-Plugin 'scrooloose/syntastic'
-
 " highlight yanked text
 Plugin 'machakann/vim-highlightedyank'
 
 " autocomplete
 Plugin 'Valloric/YouCompleteMe'
 
+" asynchronous linting
+Plugin 'w0rp/ale'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" ==== ruby-vim config ====
+
+" parse entire buffer and add list of classes to completion results
+let g:rubycomplete_classes_in_global = 1
+
+" detect and load Rails env for files within rails project for autocompletion
+let g:rubycomplete_rails = 1
 
 " ==== NERDTree config ====
 
